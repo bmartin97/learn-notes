@@ -3,8 +3,37 @@
 **Start Date**: 2024. 03. 19.
 **End Date**: 2024. 03. 26.
 
-**To Learn**:
 
+
+- 1. [Declaration vs Initialization](#DeclarationvsInitialization)
+- 2. [Declaration types](#Declarationtypes)
+- 3. [Scopes](#Scopes)
+  - 3.1. [Global scope](#Globalscope)
+    - 3.1.1. [Example](#Example)
+  - 3.2. [Module scope](#Modulescope)
+    - 3.2.1. [Module scoped variables in modules](#Modulescopedvariablesinmodules)
+    - 3.2.2. [Global scoped variables in modules](#Globalscopedvariablesinmodules)
+  - 3.3. [Function scope](#Functionscope)
+  - 3.4. [Block scope](#Blockscope)
+  - 3.5. [Hoisting of `var` declared variables](#Hoistingofvardeclaredvariables)
+  - 3.6. [Hoisting of `let` declared variables and `const` constants](#Hoistingofletdeclaredvariablesandconstconstants)
+  - 3.7. [Hoisting fuctions declarations](#Hoistingfuctionsdeclarations)
+  - 3.8. [Hoisting function expressions](#Hoistingfunctionexpressions)
+  - 3.9. [Hoisting example with function declaration and `var` variable](#Hoistingexamplewithfunctiondeclarationandvarvariable)
+  - 3.10. [Hoisting example with modules](#Hoistingexamplewithmodules)
+  - 3.11. [Hoisting precedence order](#Hoistingprecedenceorder)
+- 4. [Functions](#Functions)
+  - 4.1. [Function Declaration](#FunctionDeclaration)
+  - 4.2. [Function Expression](#FunctionExpression)
+  - 4.3. [Arrow Function Expression](#ArrowFunctionExpression)
+  - 4.4. [Shorthand Arrow Function Expression (implicit return)](#ShorthandArrowFunctionExpressionimplicitreturn)
+  - 4.5. [IIFE (Immediately Invoked Function Expression)](#IIFEImmediatelyInvokedFunctionExpression)
+- 5. [Synchronus callback](#Synchronuscallback)
+- 6. [Asynchronus callback](#Asynchronuscallback)
+- 7. [Currying](#Currying)
+
+
+**Progress**:
 ```
 + var vs let vs const
 + scopes

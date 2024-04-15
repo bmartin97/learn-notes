@@ -12,26 +12,29 @@
     - 3.2.2. [Global scoped variables in modules](#Globalscopedvariablesinmodules)
   - 3.3. [Function scope](#Functionscope)
   - 3.4. [Block scope](#Blockscope)
-  - 3.5. [Hoisting of `var` declared variables](#Hoistingofvardeclaredvariables)
-  - 3.6. [Hoisting of `let` declared variables and `const` constants](#Hoistingofletdeclaredvariablesandconstconstants)
-  - 3.7. [Hoisting fuctions declarations](#Hoistingfuctionsdeclarations)
-  - 3.8. [Hoisting function expressions](#Hoistingfunctionexpressions)
-  - 3.9. [Hoisting example with function declaration and `var` variable](#Hoistingexamplewithfunctiondeclarationandvarvariable)
-  - 3.10. [Hoisting example with modules](#Hoistingexamplewithmodules)
-  - 3.11. [Hoisting precedence order](#Hoistingprecedenceorder)
-- 4. [Functions](#Functions)
-  - 4.1. [Function Declaration](#FunctionDeclaration)
-  - 4.2. [Function Expression](#FunctionExpression)
-  - 4.3. [Arrow Function Expression](#ArrowFunctionExpression)
-  - 4.4. [Shorthand Arrow Function Expression (implicit return)](#ShorthandArrowFunctionExpressionimplicitreturn)
-  - 4.5. [IIFE (Immediately Invoked Function Expression)](#IIFEImmediatelyInvokedFunctionExpression)
-- 5. [Synchronus callback](#Synchronuscallback)
-- 6. [Asynchronus callback](#Asynchronuscallback)
-- 7. [Currying](#Currying)
-- 8. [Closure](#Closure)
-- 9. [Emulate Private Variables With Clousure](#EmulatePrivateVariablesWithClousure)
-- 10. [Promise](#Promise)
-- 11. [Async/Await](#AsyncAwait)
+- 4. [Hoisting](#Hoisting)
+  - 4.1. [Hoisting of `var` declared variables](#Hoistingofvardeclaredvariables)
+  - 4.2. [Hoisting of `let` declared variables and `const` constants](#Hoistingofletdeclaredvariablesandconstconstants)
+  - 4.3. [Hoisting fuctions declarations](#Hoistingfuctionsdeclarations)
+  - 4.4. [Hoisting function expressions](#Hoistingfunctionexpressions)
+  - 4.5. [Hoisting example with function declaration and `var` variable](#Hoistingexamplewithfunctiondeclarationandvarvariable)
+  - 4.6. [Hoisting example with modules](#Hoistingexamplewithmodules)
+  - 4.7. [Hoisting precedence order](#Hoistingprecedenceorder)
+- 5. [Functions](#Functions)
+  - 5.1. [Function Declaration](#FunctionDeclaration)
+  - 5.2. [Function Expression](#FunctionExpression)
+  - 5.3. [Arrow Function Expression](#ArrowFunctionExpression)
+  - 5.4. [Shorthand Arrow Function Expression (implicit return)](#ShorthandArrowFunctionExpressionimplicitreturn)
+  - 5.5. [IIFE (Immediately Invoked Function Expression)](#IIFEImmediatelyInvokedFunctionExpression)
+- 6. [Callback](#Callback)
+- 7. [Synchronus callback](#Synchronuscallback)
+- 8. [Asynchronus callback](#Asynchronuscallback)
+- 9. [Currying](#Currying)
+- 10. [Closure](#Closure)
+  - 10.1. [Emulate Private Variables With Clousure](#EmulatePrivateVariablesWithClousure)
+- 11. [Promise](#Promise)
+- 12. [Async/Await](#AsyncAwait)
+- 13. [Resources:](#Resources:)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -230,11 +233,11 @@ console.log(age); // ReferenceError: age is not defined
 console.log(name); // ReferenceError: name is not defined
 ```
 
-# Hoisting
+## 4. <a name='Hoisting'></a>Hoisting
 
 Variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.
 
-### 3.5. <a name='Hoistingofvardeclaredvariables'></a>Hoisting of `var` declared variables
+### 4.1. <a name='Hoistingofvardeclaredvariables'></a>Hoisting of `var` declared variables
 
 Access a variable before it's declared, the value is always undefined
 
@@ -246,7 +249,7 @@ var age = 10;
 console.log(age); // Output: 10
 ```
 
-### 3.6. <a name='Hoistingofletdeclaredvariablesandconstconstants'></a>Hoisting of `let` declared variables and `const` constants
+### 4.2. <a name='Hoistingofletdeclaredvariablesandconstconstants'></a>Hoisting of `let` declared variables and `const` constants
 
 Access the variable before its declaration results in a ReferenceError, indicating that the variable exists but has not been initialized yet.
 `Reference Error` in this case is evidence of hoisting behavior.
@@ -259,7 +262,7 @@ let age = 10;
 console.log(age); // Output: 10
 ```
 
-### 3.7. <a name='Hoistingfuctionsdeclarations'></a>Hoisting fuctions declarations
+### 4.3. <a name='Hoistingfuctionsdeclarations'></a>Hoisting fuctions declarations
 
 ```js
 myFunction(); // Output: 10
@@ -269,7 +272,7 @@ function myFunction() {
 }
 ```
 
-### 3.8. <a name='Hoistingfunctionexpressions'></a>Hoisting function expressions
+### 4.4. <a name='Hoistingfunctionexpressions'></a>Hoisting function expressions
 
 ```js
 myFunction(); // ReferenceError: Cannot access 'myFunction' before initialization
@@ -279,7 +282,7 @@ const myFunction = () => {
 };
 ```
 
-### 3.9. <a name='Hoistingexamplewithfunctiondeclarationandvarvariable'></a>Hoisting example with function declaration and `var` variable
+### 4.5. <a name='Hoistingexamplewithfunctiondeclarationandvarvariable'></a>Hoisting example with function declaration and `var` variable
 
 ```js
 myFunction(); // Output: undefined
@@ -301,7 +304,7 @@ function myFunction() {
 }
 ```
 
-### 3.10. <a name='Hoistingexamplewithmodules'></a>Hoisting example with modules
+### 4.6. <a name='Hoistingexamplewithmodules'></a>Hoisting example with modules
 
 `index.html`
 
@@ -338,7 +341,7 @@ var age = 20; // Module scoped variable
 console.log(age); // Output: 20
 ```
 
-### 3.11. <a name='Hoistingprecedenceorder'></a>Hoisting precedence order
+### 4.7. <a name='Hoistingprecedenceorder'></a>Hoisting precedence order
 
 Function declarations are hoisted over variable declarations but not over variable assignments.
 
@@ -381,9 +384,9 @@ function a() {
 }
 ```
 
-## 4. <a name='Functions'></a>Functions
+## 5. <a name='Functions'></a>Functions
 
-### 4.1. <a name='FunctionDeclaration'></a>Function Declaration
+### 5.1. <a name='FunctionDeclaration'></a>Function Declaration
 
 ```js
 function myFunction() {
@@ -391,7 +394,7 @@ function myFunction() {
 }
 ```
 
-### 4.2. <a name='FunctionExpression'></a>Function Expression
+### 5.2. <a name='FunctionExpression'></a>Function Expression
 
 ```js
 const myFunction = function () {
@@ -399,7 +402,7 @@ const myFunction = function () {
 };
 ```
 
-### 4.3. <a name='ArrowFunctionExpression'></a>Arrow Function Expression
+### 5.3. <a name='ArrowFunctionExpression'></a>Arrow Function Expression
 
 ```js
 const myFunction = () => {
@@ -407,13 +410,13 @@ const myFunction = () => {
 };
 ```
 
-### 4.4. <a name='ShorthandArrowFunctionExpressionimplicitreturn'></a>Shorthand Arrow Function Expression (implicit return)
+### 5.4. <a name='ShorthandArrowFunctionExpressionimplicitreturn'></a>Shorthand Arrow Function Expression (implicit return)
 
 ```js
 const myFunction = () => 10;
 ```
 
-### 4.5. <a name='IIFEImmediatelyInvokedFunctionExpression'></a>IIFE (Immediately Invoked Function Expression)
+### 5.5. <a name='IIFEImmediatelyInvokedFunctionExpression'></a>IIFE (Immediately Invoked Function Expression)
 
 ```js
 (function () {
@@ -421,7 +424,7 @@ const myFunction = () => 10;
 })();
 ```
 
-# Callback
+## 6. <a name='Callback'></a>Callback
 
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 
@@ -443,13 +446,13 @@ or with shorthand arrow function
 great("Sarah", (s) => s.toUpperCase());
 ```
 
-## 5. <a name='Synchronuscallback'></a>Synchronus callback
+## 7. <a name='Synchronuscallback'></a>Synchronus callback
 
 Called immediately after the invocation of the outer function
 
 e.g: `Array.prototype.map(callbackFn)`, `Array.prototype.forEach(callbackFn)`
 
-## 6. <a name='Asynchronuscallback'></a>Asynchronus callback
+## 8. <a name='Asynchronuscallback'></a>Asynchronus callback
 
 Called at some point later, after an asynchronous operation has completed
 
@@ -457,7 +460,7 @@ e.g: `setTimeout(callbackFn, delay)`, `Promise.prototype.then(callbackFn)`
 
 > Understanding whether the callback is synchronously or asynchronously called is particularly important when analyzing side
 
-## 7. <a name='Currying'></a>Currying
+## 9. <a name='Currying'></a>Currying
 
 Currying is a functional programming technique in JavaScript where a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument.
 
@@ -513,7 +516,7 @@ uncurry(curry(add))(5, 10, 25);
 
 > JavaScript implementations usually both keep the function callable normally and return the partial if the arguments count is not enough.
 
-## 8. <a name='Closure'></a>Closure
+## 10. <a name='Closure'></a>Closure
 
 Function bundled together (enclosed) with references to its surrounding state (the lexical environment).
 
@@ -540,7 +543,7 @@ counter(); // Output: Count: 2
 counter(); // Output: Count: 3
 ```
 
-## 9. <a name='EmulatePrivateVariablesWithClousure'></a>Emulate Private Variables With Clousure
+### 10.1. <a name='EmulatePrivateVariablesWithClousure'></a>Emulate Private Variables With Clousure
 
 ```js
 const counter = (function () {
@@ -574,7 +577,7 @@ counter.decrement();
 console.log(counter.value()); // Output: Count: 0
 ```
 
-## 10. <a name='Promise'></a>Promise
+## 11. <a name='Promise'></a>Promise
 
 The `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
@@ -586,6 +589,16 @@ A Promise is in one of these states:
 
 Promise callbacks are handled as a `microtask` whereas `setTimeout()` callbacks are handled as task queues.
 
+Promise Object Internal slots
+
+```js
+[[PromiseState]] : 'pending' | 'fulfilled' | 'rejected'
+[[PromiseResult]]:  reject(PromiseResult) | resolve(PromiseResult)
+[[PromiseFulfillReactions]]: then(fullfillReaction).then(fullfillReaction2) // added to the microtask queue
+[[PromiseRejectReactions]]: catch(rejectReaction)
+[[PromiseIsHandled]]: true | false
+```
+
 ```js
 myPromise
   .then(handleFulfilledA)
@@ -594,7 +607,9 @@ myPromise
   .catch(handleRejectedAny);
 ```
 
-## 11. <a name='AsyncAwait'></a>Async/Await
+Read More: https://www.lydiahallie.com/blog/promise-execution
+
+## 12. <a name='AsyncAwait'></a>Async/Await
 
 The async function declaration creates a binding of a new async function to a given name. The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style and avoiding the need to explicitly configure promise chains.
 
@@ -610,3 +625,33 @@ async function myFunction() {
   }
 }
 ```
+
+## Event Loop
+
+https://www.youtube.com/watch?v=eiC58R16hb8
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+### Concurrency Model
+
+The concurrency model of JavaScript is based on the concept of an “event loop”. This model enables JavaScript to carry out non-blocking I/O operations despite being a single-threaded language.
+
+### Heap
+
+Objects are allocated in a heap which is just a name to denote a large (mostly unstructured) region of memory.
+
+### Queue
+
+A JavaScript runtime uses a message queue, which is a list of messages to be processed. Each message has an associated function that gets called to handle the message.
+
+## 13. <a name='Resources:'></a>Resources:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#declarations
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+- https://www.lydiahallie.com/blog/promise-execution
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#emulating_private_methods_with_closures
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- https://javascript.info/currying-partials
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+- https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+- https://www.youtube.com/watch?v=eiC58R16hb8

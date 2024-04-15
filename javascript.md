@@ -42,26 +42,6 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-**Start Date**: 2024. 03. 19.
-**End Date**: 2024. 03. 26.
-
-**To Learn**:
-
-```
-+ var vs let vs const
-+ scopes
-+ hoisting
-+ IIFE
-+ callbacks
-+ currying
-+ closures
-+ async/await
-+ promises
-o event loop, call stack
-o prototype, object
-o import, export EJS
-```
-
 ## 1. <a name='DeclarationvsInitialization'></a>Declaration vs Initialization
 
 ```js
